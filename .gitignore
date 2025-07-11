@@ -23,3 +23,5 @@ lerna-debug.log*
 .temp
 .tmp
 .vercel
+
+.DS_Store

@@ -8,7 +8,8 @@ export default async function handler(req, res) {
   const speciesRes = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
   const species    = await speciesRes.json();
 
-  const name = species.names.find(n => n.language.name === 'en')?.name ?? species.name;
+  const idPrefix = "#" + id;
+  const name = idPrefix + " " + species.names.find(n => n.language.name === 'en')?.name ?? species.name;
   const desc =
     species.flavor_text_entries.find(e => e.language.name === 'en')?.flavor_text
       ?.replace(/\f|\n/g, ' ')
