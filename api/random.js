@@ -17,6 +17,5 @@ export default async function handler(req, res) {
       ?.trim() ?? '';
 
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Cache-Control', 's-maxage=86400');
   res.status(200).json({ id, name, description: desc, url });
 }
